@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void main() {
-	int a;
+	float a;
 	printf("Hay nhap diem cua ban:");
 	scanf_s("%d", &a);
 	if (8.0 > a >= 6.5) {
