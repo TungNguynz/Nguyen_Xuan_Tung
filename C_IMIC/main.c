@@ -2,14 +2,19 @@
 
 void main() {
 	int a, b;
-	printf("Hay nhap gia tri cua a:");
+	printf("Hay nhap diem cua ban:");
 	scanf_s("%d", &a);
-	printf("Hay nhap gia tri cua b:");
-	scanf_s("%d", &b);
-	if (a < b) {
-		printf("a nho hon b");
+	if (8.0 > a >= 6.5) {
+		printf("ban la hoc sinh kha");
 	}
+	else if (6.5>a>=5,0){
+		printf("ban la hoc sinh trung binh");
+	}
+	else if (5.0 > a){
+		printf("ban la hoc sinh yeu");
+		}
 	else {
-		printf("a lon hon b");
+		printf("ban la hoc sinh gioi");
+
 	}
 }
