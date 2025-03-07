@@ -1,20 +1,32 @@
 #include <stdio.h>
 
 void main() {
-	float a;
-	printf("Hay nhap diem cua ban:");
-	scanf_s("%d", &a);
-	if (8.0 > a  && a>= 6.5) {
-		printf("ban la hoc sinh kha");
-	}
-	else if (6.5>a && a>=5,0){
-		printf("ban la hoc sinh trung binh");
-	}
-	else if (5.0 > a){
-		printf("ban la hoc sinh yeu");
+	int buoc = 0, i =0, mat_khau = 1234, mat_khau_user, so_tien_rut=0;
+	switch (buoc) {
+	case 0:
+		while (i < 3) {
+			printf("Hay nhap mat khau cua ban:");
+			scanf_s("%d", &mat_khau_user);
+			if (mat_khau_user != mat_khau) {
+				i++;
+			}
+			else {
+				buoc++;
+				i = 4;
+			}
 		}
-	else {
-		printf("ban la hoc sinh gioi");
-
+	    case 1:
+			while (buoc == 1) {
+				printf("hay nhap so tien can rut: ");
+				scanf_s("%d", &so_tien_rut);
+				if (so_tien_rut < 10000) {
+					printf("so tien can rut la: %d VND", so_tien_rut);
+					buoc++;
+	
+				}
+			}
+			break;
 	}
 }
+
+
