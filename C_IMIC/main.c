@@ -1,15 +1,21 @@
 #include <stdio.h>
+#include<math.h>
 
 int main() {
-	int a, b, c;
-	printf("Hay nhap 3 so a,b,c:\n ");
-	scanf_s("%d %d %d", &a,&b,&c);
-	if (a >= b && a >= c) {
-		printf("%d la so lon nhat", a);
-	}else if (b >= c && b >= a) {
-		printf("%d la so lon nhat", b);
+	float a, b, c, delta, x1, x2, x;
+	printf("Hay nhap he so a,b,c:\n ");
+	scanf_s("%f %f %f", &a,&b,&c);
+	delta = (b * b) - (4 * a * c);
+
+	if (delta>0) {
+		x1 = (b * (-1) + sqrt(delta)) / (2 * a);
+		x2 = (b * (-1) - sqrt(delta)) / (2 * a);
+		printf("Phuong trinh co hai nghiem phan biet x1 va x2 lan luot la: %.2f va %.2f ", x1, x2);
+	}else if (delta==0) {
+		x = (b * (-1)) / (2 * a);
+		printf("phuonh trinh co ngiem duy nhat la x = %.2f", x);
 	}
-	else if (c >=b && c >= a) {
-		printf("%d la so lon nhat", c);
+	else {
+		printf("phuong trinh vo nghiem");
 	}
 }
