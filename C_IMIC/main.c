@@ -1,19 +1,15 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main() {
-    int n = 0, a=0;
-    float b = 0, S = 0;
-    printf("hay nhap so tien gui: ");
-    scanf("%d", &a);
-    printf("hay nhap so nam: ");
-    scanf("%d", &n); 
-    printf("hay nhap phan tram lai: ");
-    scanf("%f", &b);
-    S = a;
-    for (int i = 1; i <= n; i++) {
-        
-            S = S + S*b;
+    int array_1[10] = { 0 };
+    int s = 0;
+    printf("hay nhap lan luot cac gia tri tu ban phim: ");
+    for (int i = 0; i <= 9; i++) {
+        scanf("%d", &array_1[i]);
     }
-    printf( "tong so tien sau % d nam la : % f", n, S);
+    for (int i = 0; i <= 9; i++) {
+        s = s + array_1[i];
+    }
+    printf("tong cac gia tri trong mang la %d", s);
 }
     
