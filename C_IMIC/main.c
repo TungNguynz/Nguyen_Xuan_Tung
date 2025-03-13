@@ -4,9 +4,11 @@ int main() {
     int n = 0, S=0;
     printf("hay nhap so nguyen n: ");
     scanf("%d", &n);
-    for (int i = 1; i <= n; i++) {
-        S = S + i;
+    for (int i = 2; i <= n; i++) {
+        if (i % 2 == 0) {
+            S = S + i;
+        }
     }
-    printf(" tong cua %d so nguyen la: %d", n, S);
+    printf(" tong cua %d so nguyen chan la: %d", n, S);
 }
     
