@@ -1,20 +1,19 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int main() {
-    int array_1[10] = { 0 };
-    int s = 0, a=0;
-    float n = 0;
-    printf("hay nhap lan luot cac gia tri tu ban phim: ");
-    for (int i = 0; i <= 9; i++) {
-        scanf("%d", &array_1[i]);
-    }
-    for (int i = 0; i <= 9; i++) {
-        if (array_1[i] % 2 != 0) {
-            s = s + array_1[i];
-            a++;
+    int arr[] = { 1,2,2,4,4,3,1,3,2,4,1,3 };
+    int so_lon_nhat = 0;
+    int so_luong_doi_tuong = sizeof(arr) / sizeof(arr[0]);
+    for (int i = 0; i < so_luong_doi_tuong; i++) {
+        if (so_lon_nhat < arr[i]) {
+            so_lon_nhat = arr[i];
         }
     }
-    n = (float)s / a;
-    printf("gia tri trung binh cac phan tu le trong mang la %.2f", n);
+    for (int i = 0; i < so_luong_doi_tuong; i++){
+
+        if (arr[i] == so_lon_nhat) {
+            printf("%d ", i);
+        }
+    }
 }
     
