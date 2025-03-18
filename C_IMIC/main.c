@@ -2,12 +2,11 @@
 #include <stdio.h>
 
 int main() {
-    char str[] = "Hello ";
-    int n = 0;
+    char str[] = "Hello";
     for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == ' ') {
-            n++;
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 'a' + 'A';  
         }
     }
-    printf("So dau space trong chuoi là: %d\n", n);
+    printf(" IN HOA: %s\n", str);
 }
