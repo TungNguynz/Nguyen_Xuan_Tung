@@ -2,11 +2,19 @@
 #include <stdio.h>
 
 int main() {
-    char str[] = "Hello";
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] >= 'a' && str[i] <= 'z') {
-            str[i] = str[i] - 'a' + 'A';  
+    char str[] = "Xin chao cac ban";  
+    int n = 0;  
+    int i = 0;
+    int inword = 0;  
+    while (str[i] != '\0') {
+        if (str[i] != ' ' && inword==0) {  
+            n++;  
+            inword = 1;  
         }
+        else if (str[i] == ' ') {
+            inword = 0;  
+        }
+        i++;
     }
-    printf(" IN HOA: %s\n", str);
+    printf("So tu trong chuoi là: %d\n", n);
 }
