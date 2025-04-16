@@ -1,39 +1,28 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
- 
-typedef struct {
-    int tu;   
-    int mau; 
-}phan_so;
-phan_so rut_gon(phan_so a) {
-    int ucln = 1;
-    for (int i = 1;i<=a.tu && i<= a.mau; i++) {
-        if (a.tu % i == 0 && a.mau % i == 0) {
-            ucln = i; 
-        }
-    }
-    a.tu = a.tu / ucln;
-    a.mau = a.mau / ucln;
-    return  a;
+#include<string.h>
+#include<windows.h>
+float fx(float x) {
+	return x * x;
 }
- phan_so cong(phan_so a, phan_so b) {
-    phan_so ketqua;
-    ketqua.tu = a.tu * b.mau + b.tu * a.mau;  
-    ketqua.mau = a.mau * b.mau;                
-    ketqua = rut_gon(ketqua);
-    return ketqua;
+float gx(float x) {
+	return 2 * x  * x +3 *x+1;
 }
- phan_so tru(phan_so a,phan_so b) {
-    phan_so ketqua;
-    ketqua.tu = a.tu * b.mau - b.tu * a.mau;  
-    ketqua.mau = a.mau * b.mau;                
-    ketqua = rut_gon(ketqua);
-    return ketqua;
+float tx(float x) {
+	return sin(x) + 1;
 }
- phan_so chia(phan_so a, phan_so b) {
-    phan_so ketqua;
-    ketqua.tu = a.tu * b.mau;       
-    ketqua.mau = a.mau * b.tu;      
-    ketqua = rut_gon(ketqua);
-    return ketqua;
+typedef float (*contro)(float x);
+float tinhtichphan(contro tro, int a, int b) {
+	float h = (b - a) / 1000.0f;
+	float s = 0;
+	for (int i = 0; i < 1000; i++) {
+		float db = tro(a + i * h);
+		float dl = tro(a + (i + 1) * h);
+		s += ((dl + db) * h / 2);
+	}
+	return s;
+}
+void main() {
+	float a = tinhtichphan(fx, 1,2);
+	printf("%f", a);
 }
